@@ -36,6 +36,7 @@
             MenuService.existsDish(dish).then(function (valid) {
                 if (valid) {
                     $timeout(function () {
+                      console.log('inside menu exist..');
                         service.putSignUpData($ctrl.data);
                         $ctrl.data = {};
                         $ctrl.data.message = INFO_SAVED_MESSAGE;
@@ -44,6 +45,7 @@
                     });
                 }
                 else {
+                    console.log('inside menu not exist..');
                     $ctrl.data.message = MENU_NOT_EXISTS_MESSAGE;
                     $ctrl.isSignedUp = false;
                     $ctrl.isChecked = true;

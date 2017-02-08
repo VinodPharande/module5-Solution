@@ -78,13 +78,12 @@
           </div>
         </div>
 
-        <div class="col-lg-offset-3 col-md-offset-3 col-sm-offset-3">
-
+        <div class="col-lg-offset-5 col-md-offset-5 col-sm-offset-5">
           <div class="help-block"
-               ng-show="!ctrl.isSignedUp && signupForm.areacode.$error.required && !signupForm.areacode.$pristine
-               || signupForm.telnum.$error.required && !signupForm.telnum.$pristine">
+               ng-show="signupForm.telnum.$invalid && !signupForm.telnum.$pristine && !ctrl.isSignedUp">
             <span class="glyphicon glyphicon-remove"></span>
-            <span>phone number are required in format 123-1234</span>
+            <span ng-show="signupForm.telnum.$error.required">Email address is required.</span>
+            <span ng-show="!signupForm.telnum.$error.required">phone number are required in format 123-1234</span>
           </div>
         </div>
 
@@ -97,6 +96,13 @@
             <input type="text" class="form-control" id="favoritedish" name="favoritedish"
                    ng-model="ctrl.data.favoriteDish" placeholder="Favorite Dish e.g. A1 or A2 etc."
                    pattern="^[a-zA-Z]{1,2}\d{1,2}$" maxlength="4">e.g. A1 or A2 etc.
+
+                   <div class="help-block"
+                        ng-show="signupForm.favoritedish.$invalid && !signupForm.favoritedish.$pristine && !ctrl.isSignedUp">
+                     <span class="glyphicon glyphicon-remove"></span>
+                     <span ng-show="signupForm.favoritedish.$error.required">FavoriteDish required.</span>
+                     <span ng-show="!signupForm.favoritedish.$error.required">No such menu number exists.</span>
+                   </div>
           </div>
         </div>
       </fieldset>
