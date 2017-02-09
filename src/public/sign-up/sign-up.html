@@ -95,7 +95,7 @@
               class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
             <input type="text" class="form-control" id="favoritedish" name="favoritedish"
                    ng-model="ctrl.data.favoriteDish" placeholder="Favorite Dish e.g. A1 or A2 etc."
-                   pattern="^[a-zA-Z]{1,2}\d{1,2}$" maxlength="4">e.g. A1 or A2 etc.
+                   pattern="^[a-zA-Z]{1,2}\d{1,2}$" maxlength="4" required>e.g. A1 or A2 etc.
 
                    <div class="help-block"
                         ng-show="signupForm.favoritedish.$invalid && !signupForm.favoritedish.$pristine && !ctrl.isSignedUp">
